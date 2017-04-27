@@ -8,11 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { FilmCardComponent } from './film-card/film-card.component';
+import { FilmCardService } from './film-card/film-card.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    FilmCardComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [FilmCardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
