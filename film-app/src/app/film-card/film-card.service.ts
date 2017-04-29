@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable'
 
 @Injectable()
 export class FilmCardService {
-  url: string = "http://www.omdbapi.com/?s=star wars&page-1"
+  url: string = "http://www.omdbapi.com/?page=1&s="
   constructor(private http: Http) { 
   }
 
@@ -13,8 +13,8 @@ export class FilmCardService {
     return body.Search || {};
   }
 
-  getFilms() { // вызывать из компонента
-    return this.http.get(this.url).map(this.extractData)
+  getFilms(filmName: string) { // вызывать из компонента
+    return this.http.get(this.url + filmName).map(this.extractData)
   }
 
 }
